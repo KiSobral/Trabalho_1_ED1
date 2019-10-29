@@ -1,21 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* Espaço reservado para os includes dos módulos das listas */
+// Include da fila com vetor de tamanho fixo
+//#include "FilaVetor.h"
+
+// Include da fila circular com redimensionamento
+//#include "FilaCircular.h"
+
+// Include da fila circular com lista encadeada
+//#include "FilaLista.h"
+
 int main(){
-    int pop;
-    
     system("cls || clear");
-
-    cria_fila();
-    enfileira(5);
-    enfileira(4);
-    enfileira(9);
-    enfileira(1);
-
-    imprime_fila();
-
-    cria_fila();
-    imprime_fila();
 
     return 0;
 }

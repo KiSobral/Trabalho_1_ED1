@@ -1,7 +1,8 @@
 #ifndef FILAVETOR_H
 #define FILAVETOR_H
 
-static int N=5;
+
+int N;
 int p;
 int u;
 int *fila;

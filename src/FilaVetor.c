@@ -7,6 +7,7 @@
 int cria_fila(){
     p=0;
     u=0;
+    N=5;
 
     if (fila==NULL){
         fila = malloc(N*sizeof(int));

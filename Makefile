@@ -16,7 +16,6 @@ CC := gcc
 SRCFILES := $(wildcard src/*.c)
 
 all: $(SRCFILES:src/%.c=obj/%.o)
-		$(CC) obj/*.o -o bin/prog
 
 obj/%.o: src/%.c 
 		$(CC) -c $< -o $@ -I./inc

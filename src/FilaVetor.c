@@ -48,29 +48,25 @@ int tamanho_fila() {
 
 void imprime_fila() {
     if (fila_vazia()) {
-        printf("\t\t------------------------\n");
-        printf("\t\t| A FILA ESTA VAZIA!!! |\n");
-        printf("\t\t------------------------\n");
+        printf("------------------------\n");
+        printf("| A FILA ESTA VAZIA!!! |\n");
+        printf("------------------------\n");
         printf("\n\n");    
         return;
     } 
  
-    printf("\t\t");
     for (int i=0; i<N; i++) printf("-------");
     printf("-\n");
-
-    printf("\t\t");
+    
     for (int i=0; i<N; i++) {
         if (i<p || i>=u) printf("| null ");
         else             printf("| %04d ", fila[i]);
     } 
     printf("|\n");
-
-    printf("\t\t");
+    
     for (int i=0; i<N; i++) printf("-------");
     printf("-\n");
-
-    printf("\t\t");
+    
     for (int i=0; i<N; i++) {
         if (i==p)          printf("   P   ");
         else if (i==(u-1)) printf("   U   ");

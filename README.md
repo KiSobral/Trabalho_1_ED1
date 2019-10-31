@@ -45,12 +45,15 @@ make run
 ```
 Este comando fica responsável por executar o arquivo **prog**.
 
+<<<<<<< HEAD
 ### Para limpar os executáveis
 ```
 make clean
 ```
 Com este comando todos os arquivos "**.o**" e o arquivo **prog** serão removidos.
 
+=======
+>>>>>>> 254965cc9fcf769a9cff3b39e783588f002ca91a
 ___
 ## Para nível de acompanhamento do progresso do trabalho
 Segue o [link do github](https://github.com/KiSobral/Trabalho_1_ED1)

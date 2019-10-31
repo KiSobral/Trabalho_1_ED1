@@ -3,12 +3,15 @@
 
 #include "FilaLista.h"
 
+
 int cria_fila(){  
+    tamanho = 0;
+
     fila = malloc(sizeof(celula));
     fila->proximo = fila;
     
     if(fila==NULL) return 0;
-    
+
     return 1;
 }
 
@@ -20,8 +23,8 @@ int enfileira(int x){
     novo->proximo = fila->proximo;
     fila->proximo = novo;
     fila->dado = x;
-    fila =  novo;
-    size++;
+    fila = novo;
+    tamanho++;
  
     return 1;
 }
@@ -34,22 +37,17 @@ int desenfileira(int *pop){
     fila->proximo = lixo->proximo;
 
     free(lixo);
-    size--;
+    tamanho--;
 
     return 1;
 }
 
 int fila_cheia() {
-    printf("-----------------------------\n");
-    printf("| A FILA É INFINiTA BOCÓ!!! |\n");
-    printf("-----------------------------\n");
-    printf("\n\n");    
-    
-    return 1;
+    return 0;
 }
 
 int tamanho_fila(){
-    return size;
+    return tamanho;
 }
 
 int fila_vazia(){
@@ -63,18 +61,45 @@ void imprime_fila(){
         printf("| A FILA ESTA VAZIA!!! |\n");
         printf("------------------------\n");
         printf("\n\n");    
+       
         return;
     } 
 
+    printf("\t");
     for(celula *j = fila->proximo; j != fila; j = j->proximo) printf("-------");
     printf("-\n");
 
+    printf("\t");
     for(celula *j = fila->proximo; j != fila; j = j->proximo) printf("| %04d ", j->dado);
     printf("|\n");
 
+    printf("\t");
     for(celula *j = fila->proximo; j != fila; j = j->proximo) printf("-------");
     printf("-\n");
 
+    printf("\t");
+    for(celula *j = fila->proximo; j != fila; j = j->proximo) {
+        if (j==fila->proximo)      printf("   P   ");
+        else if (j->proximo==fila) printf("   U   ");
+        else                       printf("       ");
+  
+    }
+
     printf("\n\n");
+    return;
 }
 
+int destroi_fila() {
+    celula *lixo;
+
+    for (celula *i=fila; i->proximo!=fila; i=i->proximo) {
+        lixo = i;
+        free(lixo);
+    }
+
+    free(fila);
+    tamanho = 0;
+
+    if (fila!=NULL) return 0;
+    else return 1;
+}

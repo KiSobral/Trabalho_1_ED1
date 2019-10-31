@@ -15,5 +15,6 @@ int fila_vazia();
 int tamanho_fila();
 void imprime_fila();
 int redimensiona_fila();
+int destroi_fila();
 
 #endif

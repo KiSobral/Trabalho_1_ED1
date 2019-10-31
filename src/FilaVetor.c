@@ -11,9 +11,11 @@ int cria_fila(){
 
     if (fila==NULL){
         fila = malloc(N*sizeof(int));
+    
     } else{
         free(fila);
         fila = malloc(N*sizeof(int));
+    
     }
 
     if (fila==NULL) return 0;
@@ -48,31 +50,47 @@ int tamanho_fila() {
 
 void imprime_fila() {
     if (fila_vazia()) {
-        printf("------------------------\n");
-        printf("| A FILA ESTA VAZIA!!! |\n");
-        printf("------------------------\n");
+        printf("\t------------------------\n");
+        printf("\t| A FILA ESTA VAZIA!!! |\n");
+        printf("\t------------------------\n");
         printf("\n\n");    
         return;
     } 
  
+    printf("\t");
     for (int i=0; i<N; i++) printf("-------");
     printf("-\n");
     
+    printf("\t");
     for (int i=0; i<N; i++) {
         if (i<p || i>=u) printf("| null ");
         else             printf("| %04d ", fila[i]);
+    
     } 
     printf("|\n");
     
+    printf("\t");
     for (int i=0; i<N; i++) printf("-------");
     printf("-\n");
     
+    printf("\t");
     for (int i=0; i<N; i++) {
         if (i==p)          printf("   P   ");
         else if (i==(u-1)) printf("   U   ");
         else               printf("       ");
+    
     }
 
     printf("\n\n");
     return;
+}
+
+int destroi_fila() {
+    free(fila);
+    p=0;
+    u=0;
+    N=0;
+
+    if (fila!=NULL) return 0;
+    else return 1;    
 }
